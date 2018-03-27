@@ -1,6 +1,6 @@
 # the script to apply git changes in production site r2lab.inria.fr
-# invoked every 10 minutes from cron through restart-website.sh
-# which does make install
+# invoked every 10 minutes from cron through pull-and-restart.sh
+# which does make publish
 
 PUBLISH-PATH = /var/www/r2lab.inria.fr/raw/
 EXCLUDES = .git
