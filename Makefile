@@ -2,11 +2,11 @@
 # invoked every 10 minutes from cron through pull-and-restart.sh
 # which does make publish
 
-PUBLISH-PATH = /var/www/r2lab.inria.fr/raw/
+PUBLISH-PATH = /var/www/r2lab.inria.fr/django/raw/
 EXCLUDES = .git
 RSYNC-EXCLUDES = $(foreach exc,$(EXCLUDES), --exclude $(exc))
 
 ########## mirror this contents 
 publish:
-	rsync -av $(RSYNC-EXCLUDES) --delete --delete-excluded ./ $(PUBLISH-PATH)/
+	rsync -ai $(RSYNC-EXCLUDES) --delete --delete-excluded ./ $(PUBLISH-PATH)/
 
